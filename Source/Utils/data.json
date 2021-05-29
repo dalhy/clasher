@@ -1,0 +1,39 @@
+{
+    "color": "00a5f9",
+    "max_cards": 102,
+    
+    "token_bot": "ODQ0NjA0MzczOTkyMDc5Mzcw.YKU1Hg.rEY8AzvJlcRBTLog3M6dY-cbOrs", 
+    "token_api": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6Ijc4MTJkODI0LWJmODUtNDk1OS1hODJiLTU3M2E1ZDc1MjM2ZiIsImlhdCI6MTYyMTQ0Mjk4OSwic3ViIjoiZGV2ZWxvcGVyL2MxYzYwMWU0LTczZmYtODI1NC0yMzlmLTc1YWJiMDcwY2Y2ZCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODcuODQuMTMuNDUiXSwidHlwZSI6ImNsaWVudCJ9XX0.Cnu8nddEPJ8VRfLmvDwfKDF0mFR1REcqiMrukZsBbU2tYAVX3QJVSGG_pyUBrB9rCeF6mGQOUotPKVjxga0eMg",
+    "bot_url": "https://discord.com/api/oauth2/authorize?client_id=844604373992079370&permissions=388160&scope=bot",
+    "help_image": "https://cdn.discordapp.com/attachments/844567083323752481/844678105276219422/Screenshot_2021-05-16-20-27-22-1.png", 
+    
+    "emojis": {
+        "error": "<:erro:844678900890337281>",
+        "clock": "<:relogio:844678876453666866>",
+        "paper": "<:papel:844674581183856679>",
+        "find": "<:lupa:844694440916680744>",
+        "card": "<:cartas:845425560591138846>",
+        "book": "<:livro:845075526833930280>",
+        "clan": "<:cla:845451035480817695>",
+        "text": "<:texto:847473022722244618>",
+        "mega": "<:megafone:847469511225376808>",
+        "swords": "<:espadas:845075472357261322>",
+        "trophy": "<:trofeu:844945261700055040>",
+        "crown": "<:coroa:845075611029733386>",
+        "challenge": "<:desafio:845442486133588008>",
+        "tournament": "<:torneio:845442009350668328>",
+        "experience": "<:experiencia:844945225012346890>",
+        "special_trophy": "<:trofeu_especial:844945282890334278>",
+        "special_card": "<:carta_especial:844945306222067774>",
+        "chests": {
+            "wooden_chest": "<:bau_madeira:844608694594961438>",
+            "silver_chest": "<:bau_prata:844608726233382942>",
+            "golden_chest": "<:bau_ouro:844608750588919889>",
+            "giant_chest": "<:bau_gigante:844608781471055872>",
+            "epic_chest": "<:bau_epico:844608808370044988>",
+            "magical_chest": "<:bau_magico:844608841999974473>",
+            "legendary_chest": "<:bau_lendario:844608973294272522>",
+            "megalightning_chest": "<:bau_relampago:844608942542028831>"
+        }
+    }
+}
