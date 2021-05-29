@@ -13,10 +13,10 @@ client = Bot(
 client.remove_command("help")
 
 modulos = [
-    "Source.Events.Ready",
-    "Source.Player",
     "Source.Help",
-    "Source.Eval"
+    "Source.Player",
+    "Source.Eval",
+    "Source.Events.Ready"
 ]
 
 try:
