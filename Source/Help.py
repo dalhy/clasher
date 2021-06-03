@@ -23,7 +23,7 @@ class Help(Cog):
             )
                 
             embed.add_field(
-                name="** News **",
+                name="** News & Announcements **",
                 value=f"{data['emojis']['mega']} No news"
             )
                 

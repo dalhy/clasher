@@ -12,10 +12,10 @@ class Ready(Cog):
         print(f"-> Clasher Status: Started")
         
         while True:
-            await self.client.change_presence(status=Status.dnd, activity=Activity(name="Clash Royale", type=1))
-            sleep(30)
-            await self.client.change_presence(status=Status.dnd, activity=Activity(name="Type !!help for help", type=3))
-            sleep(30)
+            await self.client.change_presence(activity=Activity(name="Clash Royale", type=0))
+            await sleep(30)
+            await self.client.change_presence(activity=Activity(name="Type !!help for help", type=2))
+            await sleep(30)
         
 def setup(client):
     client.add_cog(Ready(client))

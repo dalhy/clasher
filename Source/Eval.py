@@ -159,12 +159,5 @@ class eval_(commands.Cog):
             except Exception:
                 print(traceback.format_exc())
 
-    @eval_fn.error
-    async def eval_error(self, ctx, error):
-
-        if isinstance(error, commands.NotOwner): return
-        await ctx.send(f"Eval: ❌\n```py\n{repr(error)}```")
-
-
 def setup(client):
     client.add_cog(eval_(client))

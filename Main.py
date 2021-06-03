@@ -16,7 +16,8 @@ modulos = [
     "Source.Help",
     "Source.Player",
     "Source.Eval",
-    "Source.Events.Ready"
+    "Source.Events.Ready",
+    "Source.Events.Errors"
 ]
 
 try:

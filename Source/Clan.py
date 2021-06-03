@@ -6,23 +6,23 @@ from discord.ext.commands import Cog, BucketType, command, guild_only, cooldown
 
 from Source.Utils.Utils import Replacer, data
 
-class Player(Cog):
+class Clan(Cog):
     def __init__(self, client):
         self.client = client
         
     @command()
     @guild_only()
     @cooldown(1, 20, BucketType.user)
-    async def player(self, ctx, *, playertag = None):
+    async def clan(self, ctx, *, clantag = None):
         try:
-            if playertag is None:
+            if clantag is None:
                 ctx.command.reset_cooldown(ctx)
-                await ctx.reply(f"{data['emojis']['error']} Incorrect command usage. Right usage: **player <playertag>**.")
+                await ctx.reply(f"{data['emojis']['error']} Incorrect command usage. Right usage: **clan <clantag>**.")
             else:
-                message = await ctx.reply(f"{data['emojis']['find']} Looking for information of **{playertag}**...")
+                message = await ctx.reply(f"{data['emojis']['find']} Looking for information of **{clantag}**...")
                 
-                playerformat = str(playertag).replace("#", "%23")
-                request_playerdata = get(f"https://api.clashroyale.com/v1/players/{playerformat}", headers={"Authorization": data["token_api"]})
+                clanformat = str(clantag).replace("#", "%23")
+                request_playerdata = get(f"https://api.clashroyale.com/v1/clans/{clanformat}", headers={"Authorization": data["token_api"]})
                 request_playerdata_chest = get(f"https://api.clashroyale.com/v1/players/{playerformat}/upcomingchests", headers={"Authorization": data["token_api"]})
         
                 playerdata = request_playerdata.json()
@@ -50,7 +50,7 @@ class Player(Cog):
                         playerdata["totalCards"] = (int(playerdata["totalCards"]) + 1)
                 
                     for i in playerdata_chest["items"]:
-                        playerdata["upcomingChests"] += "%s (%s°)\n" % (i["name"], i["index"] + 1)
+                        playerdata["upcomingChests"] += "%s **(%s°)**\n" % (i["name"], i["index"] + 1)
                 
                     embed = Embed(
                         color=int(data["color"], 16),
@@ -58,50 +58,40 @@ class Player(Cog):
                     )
                     embed.add_field(
                         inline=False,
-                        name=f"**{data['emojis']['paper']} Profile**",
-                        value=f"```\nName: {playerdata['name']}" + "\n" + f"Tag: {playerdata['tag']}" + "\n" + f"Level: {playerdata['expLevel']}" + "\n" + f"Total Cards: {playerdata['totalCards']}/{data['max_cards']}" + "\n" + f"Favourite Card: {playerdata['currentFavouriteCard']['name']}```"
+                        name="** Profile **",
+                        value=f"{data['emojis']['paper']} Name: **{playerdata['name']} ({playerdata['tag']})**" + "\n" + f"{data['emojis']['experience']} Level: **{playerdata['expLevel']}**" + "\n" + f"{data['emojis']['trophy']} Season Trophies: **{playerdata['trophies']} ({playerdata['arena']['name']})**" + "\n" + f"{data['emojis']['special_trophy']} Best Trophies of Season: **{playerdata['bestTrophies']}**" + "\n" + f"{data['emojis']['card']} Total Cards: **{playerdata['totalCards']}/{data['max_cards']}**" + "\n" + f"{data['emojis']['special_card']} Favourite Card: **{playerdata['currentFavouriteCard']['name']}**"
                     )
                     embed.add_field(
                         inline=False,
-                        name=f"**{data['emojis']['trophy']} Trophies**",
-                        value=f"```\nSeason Trophies: {playerdata['trophies']} ({playerdata['arena']['name']})" + "\n" + f"Best Trophies of Season: {playerdata['bestTrophies']}```"
+                        name="** Battles **",
+                        value=f"{data['emojis']['book']} Battle Count: **{playerdata['battleCount']}**" + "\n" + f"{data['emojis']['swords']} Wins: **{playerdata['wins']}**" + "\n" + f"{data['emojis']['error']} Losses: **{playerdata['losses']}**" + "\n" + f"{data['emojis']['crown']} Three Crown Wins: **{playerdata['threeCrownWins']}**"
                     )
                     embed.add_field(
                         inline=False,
-                        name=f"**{data['emojis']['swords']} Battles**",
-                        value=f"```\nBattle Count: {playerdata['battleCount']}" + "\n" + f"Wins: {playerdata['wins']}" + "\n" + f"Three Crown Wins: {playerdata['threeCrownWins']}" + "\n" + f"Losses: {playerdata['losses']}```"
-                    )
-                    embed.add_field(
-                        inline=False,
-                        name=f"**{data['emojis']['challenge']} Challenges**",
-                        value=f"```\nChallenge Max Wins: {playerdata['challengeMaxWins']}" + "\n" + f"Challenge Cards Won: {playerdata['challengeCardsWon']}```"
-                    )
-                    embed.add_field(
-                        inline=False,
-                        name=f"**{data['emojis']['tournament']} Tournaments**",
-                        value=f"```\nTournament Count: {playerdata['tournamentBattleCount']}" + "\n" + f"Tournament Cards Won: {playerdata['tournamentCardsWon']}```"
+                        name="** Challenges & Tournaments **",
+                        value=f"{data['emojis']['challenge']} Challenge Max Wins: **{playerdata['challengeMaxWins']}**" + "\n" + f"{data['emojis']['tournament']} Tournament Count: **{playerdata['tournamentBattleCount']}**" + "\n" + f"{data['emojis']['card']} Challenge Cards Won: **{playerdata['challengeCardsWon']}**" + "\n" + f"{data['emojis']['card']} Tournament Cards Won: **{playerdata['tournamentCardsWon']}**"
                     )
                                     
                     if "clan" in playerdata:
                         embed.add_field(
                             inline=False,
-                            name=f"**{data['emojis']['clan']} Clan**",
-                            value=f"```\nName: {playerdata['clan']['name']}" + "\n" + f"Tag: {playerdata['clan']['tag']}" + "\n" + f"Cards Donations: {playerdata['donations']}" + "\n" + f"Cards Donations Received: {playerdata['donationsReceived']}```"
+                            name="** Clan **",
+                            value=f"{data['emojis']['clan']} Name: **{playerdata['clan']['name']} ({playerdata['clan']['tag']})**"
                         )
                                     
                     embed.add_field(
                         inline=False,
-                        name=" Upcoming Chests ",
+                        name="** Upcoming Chests **",
                         value=f"{Replacer(playerdata['upcomingChests'], replacers_chests)}"
                     )
                                     
                     embed.set_thumbnail(url=ctx.author.avatar_url)
                     embed.set_footer(text=ctx.author.name)
                     
-                    await message.edit(content=" ", embed=embed)
+                    await message.edit(content="** **", embed=embed)
                 
         except Exception as e:
-            print(f"-> Player: {e}")
+            print(f"-> Clan: {e}")
 
 def setup(client):
-    client.add_cog(Player(client))
+    client.add_cog(Clan(client))
