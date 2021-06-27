@@ -1,9 +1,9 @@
 {
     "color": "00a5f9",
-    "max_cards": 102,
+    "max_cards": 103,
     
     "token_bot": "ODQ0NjA0MzczOTkyMDc5Mzcw.YKU1Hg.rEY8AzvJlcRBTLog3M6dY-cbOrs", 
-    "token_api": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6Ijc4MTJkODI0LWJmODUtNDk1OS1hODJiLTU3M2E1ZDc1MjM2ZiIsImlhdCI6MTYyMTQ0Mjk4OSwic3ViIjoiZGV2ZWxvcGVyL2MxYzYwMWU0LTczZmYtODI1NC0yMzlmLTc1YWJiMDcwY2Y2ZCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODcuODQuMTMuNDUiXSwidHlwZSI6ImNsaWVudCJ9XX0.Cnu8nddEPJ8VRfLmvDwfKDF0mFR1REcqiMrukZsBbU2tYAVX3QJVSGG_pyUBrB9rCeF6mGQOUotPKVjxga0eMg",
+    "token_api": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjEwNDViN2QxLTgzYzItNGZiMS1hNDFmLTQ4OGE0NjdkNmE1NyIsImlhdCI6MTYyMzYxMjU3Nywic3ViIjoiZGV2ZWxvcGVyL2MxYzYwMWU0LTczZmYtODI1NC0yMzlmLTc1YWJiMDcwY2Y2ZCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIwLjAuMC4wIiwiMTg5LjUxLjIyMS45NCJdLCJ0eXBlIjoiY2xpZW50In1dfQ.-kWkH6faGriSo8P3M5HQrv5yDvTqdu4nx6MWZIfBn6GRv_4RAs0rkBAIX6lSUAHk80KIPAA7-pcRuYLw4mj4JA",
     "bot_url": "https://discord.com/api/oauth2/authorize?client_id=844604373992079370&permissions=388160&scope=bot",
     "help_image": "https://cdn.discordapp.com/attachments/844567083323752481/844678105276219422/Screenshot_2021-05-16-20-27-22-1.png", 
     
@@ -19,7 +19,7 @@
         "mega": "<:megafone:847469511225376808>",
         "swords": "<:espadas:845075472357261322>",
         "trophy": "<:trofeu:844945261700055040>",
-        "crown": "<:coroa:845075611029733386>",
+        "clan_trophy": "<:trofeu_cla:850101662541414441>",
         "challenge": "<:desafio:845442486133588008>",
         "tournament": "<:torneio:845442009350668328>",
         "experience": "<:experiencia:844945225012346890>",

@@ -15,6 +15,7 @@ client.remove_command("help")
 modulos = [
     "Source.Help",
     "Source.Player",
+    "Source.Clan",
     "Source.Eval",
     "Source.Events.Ready",
     "Source.Events.Errors"

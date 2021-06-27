@@ -30,7 +30,7 @@ class Player(Cog):
         
                 if request_playerdata.status_code == 404 or request_playerdata_chest.status_code == 404:
                     ctx.command.reset_cooldown(ctx)
-                    await message.edit(content=f"{data['emojis']['error']} Player not found. If you havent your or another player tag, join Clash Royale and copy an player tag.")
+                    await message.edit(content=f"{data['emojis']['error']} Player not found. If you havent your or another player tag, join Clash Royale and copy one.")
                 else:
                     playerdata["totalCards"] = 0
                     playerdata["upcomingChests"] = ""
