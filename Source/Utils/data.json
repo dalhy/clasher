@@ -1,9 +1,8 @@
 {
     "color": "00a5f9",
     "max_cards": 103,
-    
-    "token_bot": "YOUR_BOT_TOKEN", 
-    "token_api": "Bearer YOUR_API_TOKEN",
+    "token_bot": "YOUR_BOT_TOKEN_HERE", 
+    "token_api": "Bearer YOUR_API_JWT_TOKEN_HERE",
     "bot_url": "YOUR_BOT_URL",
     "help_image": "https://cdn.discordapp.com/attachments/844567083323752481/844678105276219422/Screenshot_2021-05-16-20-27-22-1.png", 
     
